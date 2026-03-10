@@ -1,0 +1,138 @@
+{% extends 'base.html' %}
+
+{% block title %}Register - RAG{% endblock %}
+
+{% block extra_css %}
+<style>
+    .password-toggle-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #6a8aa8;
+        z-index: 10;
+        transition: color 0.2s;
+    }
+    .password-toggle-icon:hover {
+        color: #1a73e8;
+    }
+    .password-wrapper {
+        position: relative;
+    }
+    .password-wrapper input {
+        padding-right: 2.5rem; 
+    }
+    .form-text {
+        color: #6a8aa8 !important;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card shadow-lg">
+            <div class="card-header text-center">
+                <h5 class="mb-0">
+                    <i class="fas fa-user-plus me-2"></i>Create Your Account
+                </h5>
+            </div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">Username</label>
+                        {{ form.username }}
+                        {% if form.username.errors %}
+                            <div class="text-danger">
+                                {% for error in form.username.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                    <div class="mb-3">
+                        <label for="{{ form.password1.id_for_label }}" class="form-label">Password</label>
+                        <div class="password-wrapper">
+                            {{ form.password1 }}
+                            <i class="fa fa-eye password-toggle-icon" id="toggle-password1"></i>
+                        </div>
+                        {% if form.password1.errors %}
+                            <div class="text-danger">
+                                {% for error in form.password1.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                        <small class="form-text">
+                            Password must be at least 8 characters.
+                        </small>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="{{ form.password2.id_for_label }}" class="form-label">Confirm Password</label>
+                        <div class="password-wrapper">
+                            {{ form.password2 }}
+                            <i class="fa fa-eye password-toggle-icon" id="toggle-password2"></i>
+                        </div>
+                        {% if form.password2.errors %}
+                            <div class="text-danger">
+                                {% for error in form.password2.errors %}
+                                    {{ error }}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">
+                        Register
+                    </button>
+                </form>
+                
+                <hr class="my-4">
+                <div class="text-center">
+                    <p class="mb-0">Already have an account? 
+                        <a href="{% url 'login' %}" class="btn btn-outline-primary btn-sm">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.getElementById('toggle-password1').addEventListener('click', function() {
+    const passwordInput = document.getElementById('id_password1');
+    const icon = this;
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+});
+
+document.getElementById('toggle-password2').addEventListener('click', function() {
+    const passwordInput = document.getElementById('id_password2');
+    const icon = this;
+    
+    if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+    } else {
+        passwordInput.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+    }
+});
+</script>
+{% endblock %}
