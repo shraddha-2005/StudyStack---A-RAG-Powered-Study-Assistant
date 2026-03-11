@@ -1,6 +1,5 @@
 # StudyStack – A RAG-Powered Study Assistant Web Application
 
-## Description
 This project is an AI-powered study assistant designed to help students learn efficiently from multiple educational resources. The application processes PDFs, documents, lecture videos, audio files, and YouTube transcripts, converting them into searchable text. It uses Retrieval-Augmented Generation (RAG) and semantic search to retrieve relevant information and generate context-aware answers through an interactive chat interface.
 
 ---
