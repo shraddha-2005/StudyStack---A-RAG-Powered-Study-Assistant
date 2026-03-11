@@ -19,27 +19,37 @@ This project is an AI-powered study assistant designed to help students learn ef
 
 ### Installation Steps
 ### 1. Clone the Repository
+```bash
 git clone https://github.com/yourusername/StudyStack---A-RAG-Powered-Study-Assistant.git
 cd StudyStack---A-RAG-Powered-Study-Assistant
+```
 
 ###2. Create Virtual Environment
 ###Windows
+```bash
 python -m venv venv
 venv\Scripts\activate
 
 ###macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
+```
 
 ###3. Install Dependencies
+```bash
 pip install -r requirements.txt
+```
 
 ###4. Apply Migrations
+```bash
 python manage.py makemigrations
 python manage.py migrate
+```
 
 ###5. Run Development Server
+```bash
 python manage.py runserver
+```
 
 ###6. Access the Application
 Open your browser and navigate to:
