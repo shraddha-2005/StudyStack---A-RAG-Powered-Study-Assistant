@@ -24,13 +24,13 @@ git clone https://github.com/yourusername/StudyStack---A-RAG-Powered-Study-Assis
 cd rag_assistant
 ```
 
-###2. Create Virtual Environment
+### 2. Create Virtual Environment
 ```bash
-###Windows
+# Windows
 python -m venv venv
 venv\Scripts\activate
 
-###macOS / Linux
+# macOS / Linux
 python3 -m venv venv
 source venv/bin/activate
 ```
