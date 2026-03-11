@@ -25,8 +25,8 @@ cd rag_assistant
 ```
 
 ###2. Create Virtual Environment
-###Windows
 ```bash
+###Windows
 python -m venv venv
 venv\Scripts\activate
 
