@@ -21,7 +21,7 @@ This project is an AI-powered study assistant designed to help students learn ef
 ### 1. Clone the Repository
 ```bash
 git clone https://github.com/yourusername/StudyStack---A-RAG-Powered-Study-Assistant.git
-cd StudyStack---A-RAG-Powered-Study-Assistant
+cd rag_assistant
 ```
 
 ###2. Create Virtual Environment
