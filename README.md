@@ -35,22 +35,22 @@ python3 -m venv venv
 source venv/bin/activate
 ```
 
-###3. Install Dependencies
+### 3. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-###4. Apply Migrations
+### 4. Apply Migrations
 ```bash
 python manage.py makemigrations
 python manage.py migrate
 ```
 
-###5. Run Development Server
+### 5. Run Development Server
 ```bash
 python manage.py runserver
 ```
 
-###6. Access the Application
+### 6. Access the Application
 Open your browser and navigate to:
 http://localhost:8000
